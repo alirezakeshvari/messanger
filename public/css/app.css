@@ -188,3 +188,19 @@ a {
     display: none;
   }
 }
+
+.joinLeft {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.joinLeft p {
+  font-size: 13px;
+  color: #505050;
+}
+
+.joinLeft p span {
+  font-weight: 600;
+  color: #101010;
+}

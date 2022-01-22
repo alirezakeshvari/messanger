@@ -30,6 +30,10 @@ socket.on("message", (message) => {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
+socket.on("joinLeft", (message) => {
+  joinLeftMessage(message);
+});
+
 // Send message
 
 chatForm.addEventListener("submit", (e) => {
@@ -53,6 +57,13 @@ function sendMessage(message) {
         ${message.text}
     </p>
   `;
+  document.querySelector(".chat-messages").appendChild(div);
+}
+
+function joinLeftMessage(message) {
+  const div = document.createElement("div");
+  div.classList.add("joinLeft");
+  div.innerHTML = `<p class="meta"> <span>${message.username} </span>${message.text}</p>`;
   document.querySelector(".chat-messages").appendChild(div);
 }
 
